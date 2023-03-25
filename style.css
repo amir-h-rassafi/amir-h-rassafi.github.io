@@ -75,6 +75,7 @@ a {
   .social-media {
     display: block;
     text-align: center;
+    padding: 0 5px;
   }
 
   .social-media-item {
