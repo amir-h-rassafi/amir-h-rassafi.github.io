@@ -59,12 +59,13 @@ a {
   display: block;
   width: 50px;
   height: 50px;
-  line-height: 50px;
+  line-height: 100px;
   text-align: center;
   border-radius: 50%;
+  padding: 20x;
   background-color: #333;
   color: #fff;
-  margin: 10px;
+  margin: 30px;
   font-size: 24px;
   transition: all 0.2s ease-in-out;
 }
@@ -76,10 +77,10 @@ a {
   }
 
   .social-media-item {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
-    margin: 5px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    margin: 6px;
   }
 }
