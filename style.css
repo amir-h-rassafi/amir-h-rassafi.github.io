@@ -28,14 +28,6 @@ a {
   border-radius: 50%;
 }
 
-
-/* .social-media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-
 .social-media {
   position: relative;
   display: flex;
