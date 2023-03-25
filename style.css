@@ -19,8 +19,6 @@ a {
 }
 
 
-
-
 .amir {
   width: 100%;
   max-width: 300px;
@@ -52,3 +50,54 @@ a {
 .space {
   margin-top: 300px;
 }
+
+/* 
+.social-media {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #3b5998;
+  color: #fff;
+  font-size: 70px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.social-media a:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(-60deg);
+}
+
+.social-media a:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-120deg);
+}
+
+.social-media a:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(-180deg);
+}
+
+.social-media a:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(60deg);
+}
+
+.social-media a:nth-child(5) {
+  transform: translate(-50%, -50%) rotate(120deg);
+}
+
+.social-media a:hover {
+  background-color: #fff;
+  color: #3b5998;
+} */
