@@ -81,10 +81,10 @@ a {
   .social-media-item {
     width: 30px;
     height: 30px;
-    line-height: 50px;
     font-size: 20px;
     margin: 10px;
     margin-top: 10px;
+    padding: 10px;
   }
 
   .social-media a {
