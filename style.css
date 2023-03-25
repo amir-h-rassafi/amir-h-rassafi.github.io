@@ -82,8 +82,9 @@ a {
     width: 30px;
     height: 30px;
     line-height: 50px;
-    font-size: 18px;
-    margin: 6px;
+    font-size: 20px;
+    margin: 7px;
+    margin-top: 10px;
   }
 
   .social-media a {
@@ -92,9 +93,10 @@ a {
     font-size: 60px;
     text-decoration: none;
     transition: all 0.4s ease;
+    margin-top: 10px;
   }
 
   .space {
-    margin-top: 80px;
+    margin-top: 130px;
   }
 }
