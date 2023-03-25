@@ -70,6 +70,9 @@ a {
   font-size: 24px;
   transition: all 0.2s ease-in-out;
 }
+.fa {
+  z-index: 1;
+}
 
 @media (max-width: 767px) {
   .social-media {
