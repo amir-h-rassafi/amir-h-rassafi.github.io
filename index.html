@@ -17,7 +17,7 @@
 	</h1>
 
 	<div class="social-media space" align="center">
-	    <a href="https://github.com/amir-h-rassafi/CV/releases/latest" class="social-media-items fa fa-file" id="CV"></i></a>
+	    <a href="" class="social-media-items fa fa-file" id="CV"></i></a>
 		<a href="https://www.twitter.com/amirrassafi" class="social-media-items fa fa-twitter" id="twitter"></i></a>
 		<a href="https://www.linkedin.com/in/amir-rassafi/" class="social-media-items fa fa-linkedin" id="linkedin"></i></a>
 		<a href="https://github.com/amir-h-rassafi" class="social-media-items fa fa-github" id="github"></a>
@@ -36,12 +36,15 @@
 	gtag('js', new Date());
 
 	gtag('config', 'G-15X1490YRK');
-		
-	var links = document.getElementsByClassName('social-meida-items');
+	</script>
+	<script>
+	var links = document.getElementsByClassName('social-media-items');
+	console.log(links);
 	for (var i = 0; i < links.length; i++) {
 	  links[i].addEventListener('click', function() {
 	    var linkID = this.getAttribute('id');
 	    ga('send', 'event', 'Link Clicks', 'Click', linkID);
+		console.log(linkID);
 	  });
 	}
 	</script>
