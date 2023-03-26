@@ -43,7 +43,10 @@
 	for (var i = 0; i < links.length; i++) {
 	  links[i].addEventListener('click', function() {
 	    var linkID = this.getAttribute('id');
-	    ga('send', 'event', 'Link Clicks', 'Click', linkID);
+		gtag('event', 'click', {
+			'event_category': 'Link Clicks',
+			'event_label': linkID
+			});
 		console.log(linkID);
 	  });
 	}
