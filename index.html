@@ -17,14 +17,14 @@
 	</h1>
 
 	<div class="social-media space" align="center">
-		<a href="https://www.twitter.com/amirrassafi" class="social-media-items fa fa-twitter"></i></a>
-		<a href="https://www.linkedin.com/in/amir-rassafi/" class="social-media-items fa fa-linkedin"></i></a>
-		<a href="https://github.com/amir-h-rassafi" class="social-media-items fa fa-github"></a>
-		<a href="https://stackoverflow.com/users/3636663/amir-h-rassafi" class="social-media-items fa fa-stack-overflow"></a>
-		<a href="https://www.instagram.com/amir.rassafi/" class="social-media-items fa fa-instagram"></i></a>
-		<a href="skype:amir.rassafi?chat" class="social-media-items fa fa-skype"></a>
-		<a href="mailto:amir.rassafi@gmail.com" class="social-media-items fa fa-envelope"></a>
-		<a href="https://idpay.ir/amirrassafi" class="fa fa-money"></a>
+		<a href="https://www.twitter.com/amirrassafi" class="social-media-items fa fa-twitter" id="twitter"></i></a>
+		<a href="https://www.linkedin.com/in/amir-rassafi/" class="social-media-items fa fa-linkedin" id="linkedin"></i></a>
+		<a href="https://github.com/amir-h-rassafi" class="social-media-items fa fa-github" id="github"></a>
+		<a href="https://stackoverflow.com/users/3636663/amir-h-rassafi" class="social-media-items fa fa-stack-overflow" id="stackoverflow"></a>
+		<a href="https://www.instagram.com/amir.rassafi/" class="social-media-items fa fa-instagram" id="instagram"></i></a>
+		<a href="skype:amir.rassafi?chat" class="social-media-items fa fa-skype" id="skype"></a>
+		<a href="mailto:amir.rassafi@gmail.com" class="social-media-items fa fa-envelope" id="gmail"></a>
+		<a href="https://idpay.ir/amirrassafi" class="fa fa-money" id="idpay"></a>
 
 	</div>
 
@@ -36,6 +36,14 @@
 	gtag('js', new Date());
 
 	gtag('config', 'G-15X1490YRK');
+		
+	var links = document.getElementsByClassName('social-meida-items');
+	for (var i = 0; i < links.length; i++) {
+	  links[i].addEventListener('click', function() {
+	    var linkID = this.getAttribute('id');
+	    ga('send', 'event', 'Link Clicks', 'Click', linkID);
+	  });
+	}
 	</script>
 
 </body>
