@@ -51,7 +51,7 @@ a {
 }
 
 .space {
-  margin-top: 300px;
+  margin-top: 200px;
 }
 
 
@@ -103,4 +103,22 @@ a {
   .space {
     margin-top: 150px;
   }
+}
+
+.photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  position: relative; 
+  z-index: 10;
+}
+
+.responsive-photo {
+  margin-top: 150px; 
+  width: 300px;
+  height: 300px; 
+  max-width: 300px; 
+  object-fit: cover;
+  border-radius: 50%;
 }
