@@ -1,0 +1,90 @@
+---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Writing and newsletter for Amir Hossein Rassafi." />
+    <meta property="og:title" content="Writing | Amir Hossein Rassafi" />
+    <meta property="og:description" content="Subscribe to Amir Hossein Rassafi's writing through Beehiiv." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://amir-h-rassafi.github.io/blog/" />
+    <link rel="canonical" href="https://amir-h-rassafi.github.io/blog/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://subscribe-forms.beehiiv.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Writing | Amir Hossein Rassafi</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="topnav" aria-label="Site navigation">
+        <a href="/">Home</a>
+        <a class="subscribe social-media-items" data-link-id="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=amir.rassafi@gmail.com" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="blog-page blog-page--subscribe" aria-labelledby="blog-title">
+        <h1 class="sr-only" id="blog-title">Subscribe to Amir's newsletter</h1>
+        <div class="section-inner">
+          <div class="beehiiv-card" id="beehiiv-card" aria-label="Newsletter signup">
+            <div class="beehiiv-loading" id="beehiiv-loading" aria-live="polite">
+              <span class="loading-dot" aria-hidden="true"></span>
+              Loading newsletter signup...
+            </div>
+            <script is:inline async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="5f99d5a7-dede-49d1-acfd-04e6d0ce5c54"></script>
+            <script is:inline type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-15X1490YRK"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-15X1490YRK');
+
+
+      var beehiivCard = document.getElementById('beehiiv-card');
+      var beehiivLoading = document.getElementById('beehiiv-loading');
+      if (beehiivCard && beehiivLoading) {
+        function hasBeehiivContent() {
+          return Boolean(beehiivCard.querySelector('iframe, form, input[type="email"], input[name="email"]'));
+        }
+
+        function hideBeehiivLoading() {
+          if (hasBeehiivContent()) {
+            beehiivLoading.hidden = true;
+            return true;
+          }
+          return false;
+        }
+
+        var observer = new MutationObserver(function() {
+          if (hideBeehiivLoading()) {
+            observer.disconnect();
+          }
+        });
+        observer.observe(beehiivCard, { childList: true, subtree: true });
+        hideBeehiivLoading();
+      }
+
+      var trackedLinks = document.getElementsByClassName('social-media-items');
+      for (var i = 0; i < trackedLinks.length; i++) {
+        trackedLinks[i].addEventListener('click', function() {
+          gtag('event', 'click', {
+            event_category: 'Link Clicks',
+            event_label: this.getAttribute('data-link-id')
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

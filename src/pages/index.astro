@@ -1,0 +1,248 @@
+---
+import '../styles/global.css';
+
+const nodes = [
+  { label: 'GitHub', href: 'https://github.com/amir-h-rassafi', id: 'github', icon: 'fa-github', brand: 'github' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/amir-rassafi/', id: 'linkedin', icon: 'fa-linkedin', brand: 'linkedin' },
+  { label: 'YouTube', href: 'https://www.youtube.com/channel/UCX7ywjJJwKE4cRqiQRmkg4A', id: 'youtube', icon: 'fa-youtube-play', brand: 'youtube' },
+  { label: 'Twitter / X', href: 'https://www.twitter.com/amirrassafi', id: 'twitter', icon: 'fa-twitter', brand: 'twitter' },
+  { label: 'Instagram', href: 'https://www.instagram.com/amir.rassafi/', id: 'instagram', icon: 'fa-instagram', brand: 'instagram' }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Personal website for Amir Hossein Rassafi: CV, code, profiles, social links, and contact." />
+    <meta property="og:title" content="Amir Hossein Rassafi" />
+    <meta property="og:description" content="CV, code, profiles, social links, and contact." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://amir-h-rassafi.github.io/" />
+    <link rel="canonical" href="https://amir-h-rassafi.github.io/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://subscribe-forms.beehiiv.com" />
+    <link rel="prefetch" href="/blog/" />
+    <link rel="prefetch" href="https://subscribe-forms.beehiiv.com/v3/loader.js" as="script" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Amir Hossein Rassafi</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="topnav" aria-label="Site navigation">
+        <a href="/blog/">Blog</a>
+        <a class="ask-gate" href="#ask" hidden>Ask Amir Agent</a>
+        <a class="subscribe social-media-items" data-link-id="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=amir.rassafi@gmail.com" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-shell" aria-labelledby="page-title">
+        <div class="copy">
+          <h1 id="page-title">Amir Hossein Rassafi</h1>
+          <p class="lede">Software engineer, problem solver, and technical lead focused on building systems that stay clear under pressure.<br />Away from the screen, I chase movement: gym, hiking, travel, adventure, and experiments that keep life interesting.</p>
+
+          <div class="actions" aria-label="Primary links">
+            <a class="action action--primary social-media-items" data-link-id="CV" href="https://github.com/amir-h-rassafi/CV/releases/latest/download/amirrassafi.pdf">
+              <i class="fa fa-file-text-o" aria-hidden="true"></i>
+              CV
+            </a>
+            <a class="action social-media-items" data-link-id="medium" href="https://medium.com/@amir.rassafi">
+              <i class="fa fa-medium" aria-hidden="true"></i>
+              Medium
+            </a>
+          </div>
+        </div>
+
+        <div class="profile-panel" id="links" aria-label="Profile links">
+          <a class="profile-photo social-media-items" data-link-id="linkedin" href="https://www.linkedin.com/in/amir-rassafi/" aria-label="LinkedIn profile">
+          <img src="/linkedin-profile.jpeg" alt="Amir Hossein Rassafi" width="800" height="800" />
+        </a>
+        <nav class="profile-links" aria-label="Public profiles">
+          {
+            nodes.map((node) => (
+              <a
+                class={`profile-link profile-link--${node.brand} social-media-items`}
+                href={node.href}
+                data-link-id={node.id}
+                aria-label={node.label}
+              >
+                <i class={`fa ${node.icon}`} aria-hidden="true"></i>
+              </a>
+            ))
+          }
+        </nav>
+        </div>
+
+        <div class="ai-teaser-wrap">
+          <button class="ai-teaser" id="ai-teaser" type="button" aria-describedby="ai-teaser-status">
+            <span class="robot-face" aria-hidden="true">
+              <span></span>
+              <span></span>
+            </span>
+            <span class="robot-label">Ask my AI</span>
+          </button>
+          <p class="ai-teaser-status" id="ai-teaser-status" role="status"></p>
+        </div>
+      </section>
+
+      <section class="ask-section ask-gate" id="ask" aria-labelledby="ask-title" hidden>
+        <div class="section-inner ask-inner">
+          <div class="section-copy">
+            <h2 id="ask-title">Ask Amir Agent</h2>
+            <p>Ask what Amir might think about a topic, or ask quick questions about work, writing, CV, and contact.</p>
+          </div>
+          <form class="ask-card" id="ask-form">
+            <div class="subscription-gate" id="subscription-gate">
+              <p>Subscribe to the newsletter before using Ask Amir Agent.</p>
+              <div class="gate-actions">
+                <a class="action social-media-items" data-link-id="newsletter" href="/blog/">Subscribe</a>
+                <button type="button" id="unlock-ask">I subscribed</button>
+              </div>
+            </div>
+            <label class="sr-only" for="ask-input">Ask a question about Amir</label>
+            <div class="ask-row">
+              <input id="ask-input" name="question" type="text" autocomplete="off" placeholder="What might Amir think about technical leadership?" />
+              <button type="submit">Ask</button>
+            </div>
+            <div class="prompt-row" aria-label="Suggested questions">
+              <button type="button" data-question="What might Amir think about technical leadership?">Thinking</button>
+              <button type="button" data-question="What do you work on?">Work</button>
+              <button type="button" data-question="Where can I read your writing?">Writing</button>
+            </div>
+            <p class="ask-answer" id="ask-answer" role="status">Try a prompt, or ask what Amir might think about a topic.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-15X1490YRK"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-15X1490YRK');
+
+      var aiTeaser = document.getElementById('ai-teaser');
+      var aiTeaserStatus = document.getElementById('ai-teaser-status');
+      if (aiTeaser && aiTeaserStatus) {
+        aiTeaser.addEventListener('click', function() {
+          aiTeaserStatus.textContent = 'Coming soon';
+          aiTeaserStatus.classList.add('is-visible');
+          gtag('event', 'click', {
+            event_category: 'Ask Me',
+            event_label: 'coming_soon_teaser'
+          });
+        });
+      }
+
+      var testMode = new URLSearchParams(window.location.search).has('test');
+      var gatedAskElements = document.getElementsByClassName('ask-gate');
+      if (testMode) {
+        for (var askGateIndex = 0; askGateIndex < gatedAskElements.length; askGateIndex++) {
+          gatedAskElements[askGateIndex].removeAttribute('hidden');
+        }
+      }
+
+      var trackedLinks = document.getElementsByClassName('social-media-items');
+      for (var i = 0; i < trackedLinks.length; i++) {
+        trackedLinks[i].addEventListener('click', function(event) {
+          if (this.dataset.dragged === 'true') {
+            event.preventDefault();
+            this.dataset.dragged = 'false';
+            return;
+          }
+          gtag('event', 'click', {
+            event_category: 'Link Clicks',
+            event_label: this.getAttribute('data-link-id')
+          });
+        });
+      }
+
+      var askForm = document.getElementById('ask-form');
+      var askInput = document.getElementById('ask-input');
+      var askAnswer = document.getElementById('ask-answer');
+      var promptButtons = document.querySelectorAll('[data-question]');
+      var subscriptionGate = document.getElementById('subscription-gate');
+      var unlockAsk = document.getElementById('unlock-ask');
+      var askUnlocked = localStorage.getItem('amirNewsletterSubscribed') === 'true';
+      var answers = [
+        { terms: ['cv', 'resume'], text: "You can download Amir's latest CV from the CV button near the intro." },
+        { terms: ['writing', 'blog', 'beehiiv', 'newsletter', 'medium', 'post'], text: 'Beehiiv is the main publishing source. Medium is kept as a public mirror for posts.' },
+        { terms: ['contact', 'email', 'reach'], text: 'Use the Contact button at the top right to email Amir directly.' },
+        { terms: ['github', 'code', 'project'], text: 'GitHub is linked from the profile icons. It is the best place to inspect public code and projects.' },
+        { terms: ['think', 'opinion', 'topic', 'leadership', 'architecture', 'product', 'ai', 'team'], text: 'Based on the public context here, Amir probably looks for pragmatic systems, clear ownership, low-drama execution, and ideas that survive real pressure rather than sounding clever only in theory.' },
+        { terms: ['work', 'engineer', 'lead', 'problem', 'system'], text: 'Amir is a software engineer, problem solver, and technical lead focused on clear systems that hold up under pressure.' },
+        { terms: ['gym', 'hike', 'travel', 'adventure', 'outside'], text: 'Outside work, Amir likes gym, hiking, travel, adventure, and experimenting with new things.' }
+      ];
+
+      function setAskUnlocked(unlocked) {
+        askUnlocked = unlocked;
+        if (subscriptionGate) {
+          subscriptionGate.hidden = unlocked;
+        }
+        if (askInput) {
+          askInput.disabled = !unlocked;
+        }
+        var gatedButtons = document.querySelectorAll('#ask-form .ask-row button, #ask-form .prompt-row button');
+        for (var unlockIndex = 0; unlockIndex < gatedButtons.length; unlockIndex++) {
+          gatedButtons[unlockIndex].disabled = !unlocked;
+        }
+        if (askAnswer && !unlocked) {
+          askAnswer.textContent = 'Subscribe first, then confirm here to unlock the Ask Amir Agent prototype.';
+        }
+      }
+
+      function answerQuestion(question) {
+        var normalized = question.toLowerCase();
+        for (var j = 0; j < answers.length; j++) {
+          if (answers[j].terms.some(function(term) { return normalized.indexOf(term) !== -1; })) {
+            return answers[j].text;
+          }
+        }
+        return "I can answer quick basics about Amir's work, writing, CV, contact, code, and interests. For anything specific, use Contact.";
+      }
+
+      if (askForm && askInput && askAnswer) {
+        setAskUnlocked(askUnlocked);
+        if (unlockAsk) {
+          unlockAsk.addEventListener('click', function() {
+            localStorage.setItem('amirNewsletterSubscribed', 'true');
+            setAskUnlocked(true);
+            askInput.focus();
+            askAnswer.textContent = 'Unlocked. Ask what Amir might think about a topic.';
+            gtag('event', 'ask_me_unlock', {
+              event_category: 'Ask Me',
+              event_label: 'newsletter_confirmed'
+            });
+          });
+        }
+
+        askForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+          if (!askUnlocked) {
+            askAnswer.textContent = 'Subscribe first, then confirm here to unlock Ask Amir Agent.';
+            return;
+          }
+          var question = askInput.value.trim();
+          askAnswer.textContent = question ? answerQuestion(question) : 'Ask what Amir might think about a topic, or ask about work, writing, CV, contact, code, or interests.';
+          gtag('event', 'ask_me_submit', {
+            event_category: 'Ask Me',
+            event_label: question || 'empty'
+          });
+        });
+      }
+
+      for (var k = 0; k < promptButtons.length; k++) {
+        promptButtons[k].addEventListener('click', function() {
+          askInput.value = this.getAttribute('data-question');
+          askForm.requestSubmit();
+        });
+      }
+    </script>
+
+  </body>
+</html>
