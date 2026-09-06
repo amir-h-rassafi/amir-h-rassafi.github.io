@@ -85,14 +85,14 @@ a {
 .topnav a[aria-current="page"] {
   color: var(--ink);
   background: #e7edf4;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .topnav .infra-review {
   color: #fff;
   background: linear-gradient(135deg, #0f62fe, #6d3df5);
   box-shadow: 0 8px 22px rgba(65, 74, 220, 0.28);
-  font-weight: 800;
+  font-weight: 700;
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
 
