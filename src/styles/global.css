@@ -90,23 +90,22 @@ a {
 
 .topnav .infra-review {
   color: #fff;
-  background: linear-gradient(135deg, #0f62fe, #6d3df5);
-  box-shadow: 0 8px 22px rgba(65, 74, 220, 0.28);
+  background: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
   font-weight: 700;
-  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  transition: background 160ms ease, box-shadow 160ms ease;
 }
 
 .topnav .infra-review:hover,
 .topnav .infra-review:focus-visible {
   color: #fff;
-  background: linear-gradient(135deg, #004ed6, #5727d8);
-  box-shadow: 0 10px 26px rgba(65, 74, 220, 0.4);
-  transform: translateY(-1px);
+  background: #344054;
+  box-shadow: inset 0 0 0 1px #344054;
 }
 
 .topnav .infra-review[aria-current="page"] {
   color: #fff;
-  box-shadow: 0 0 0 3px rgba(109, 61, 245, 0.2), 0 10px 26px rgba(65, 74, 220, 0.34);
+  box-shadow: 0 0 0 3px #d0d5dd;
 }
 
 .topnav .subscribe {
