@@ -77,6 +77,23 @@ const nodes = [
         </nav>
         </div>
 
+        <section class="consultation-offer" aria-labelledby="consultation-title">
+          <div class="consultation-copy">
+            <p class="eyebrow">Free infrastructure review</p>
+            <h2 id="consultation-title">Make your infrastructure cheaper and easier to run.</h2>
+            <p>In a focused 30-minute conversation, we can look for cloud cost waste, operational bottlenecks, and reliability improvements.</p>
+          </div>
+          <form class="consultation-form" id="consultation-form">
+            <p class="consultation-form-title">Open an email draft</p>
+            <div class="human-check">
+              <label for="human-answer">Quick human check: <span id="human-question"></span></label>
+              <input id="human-answer" name="human-answer" inputmode="numeric" autocomplete="off" required />
+            </div>
+            <button class="action action--primary" type="submit">Book a free review</button>
+            <p class="consultation-status" id="consultation-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
         <div class="ai-teaser-wrap">
           <button class="ai-teaser" id="ai-teaser" type="button" aria-describedby="ai-teaser-status">
             <span class="robot-face" aria-hidden="true">
@@ -240,6 +257,33 @@ const nodes = [
         promptButtons[k].addEventListener('click', function() {
           askInput.value = this.getAttribute('data-question');
           askForm.requestSubmit();
+        });
+      }
+
+      var consultationForm = document.getElementById('consultation-form');
+      var humanQuestion = document.getElementById('human-question');
+      var humanAnswer = document.getElementById('human-answer');
+      var consultationStatus = document.getElementById('consultation-status');
+      var firstNumber = Math.floor(Math.random() * 8) + 2;
+      var secondNumber = Math.floor(Math.random() * 8) + 2;
+      if (humanQuestion) {
+        humanQuestion.textContent = firstNumber + ' + ' + secondNumber + ' =';
+      }
+      if (consultationForm && humanAnswer && consultationStatus) {
+        consultationForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+          if (Number(humanAnswer.value) !== firstNumber + secondNumber) {
+            consultationStatus.textContent = 'Please solve the check before opening the email draft.';
+            humanAnswer.focus();
+            return;
+          }
+          var subject = encodeURIComponent('Free infrastructure review');
+          var body = encodeURIComponent('Hi Amir,\n\nI\x27d like to request a free infrastructure review.\n\nA little context:\n- Company or project:\n- Current infrastructure or cloud provider:\n- Main challenge:\n- Approximate monthly infrastructure spend (optional):\n\nBest,\n');
+          gtag('event', 'consultation_email', {
+            event_category: 'Consultation',
+            event_label: 'free_infrastructure_review'
+          });
+          window.location.href = 'mailto:amir.rassafi@gmail.com?subject=' + subject + '&body=' + body;
         });
       }
     </script>
