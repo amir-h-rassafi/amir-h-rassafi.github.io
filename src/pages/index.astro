@@ -34,7 +34,7 @@ const nodes = [
     <header class="topbar">
       <nav class="topnav" aria-label="Site navigation">
         <a href="/blog/">Blog</a>
-        <a href="#consultation">Free Infra Review</a>
+        <a href="/consultation/">Free Infra Review</a>
         <a class="ask-gate" href="#ask" hidden>Ask Amir Agent</a>
         <a class="subscribe social-media-items" data-link-id="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=amir.rassafi@gmail.com" target="_blank" rel="noopener noreferrer">Contact</a>
       </nav>
@@ -91,19 +91,6 @@ const nodes = [
         </div>
       </section>
 
-      <section class="consultation-section" id="consultation" aria-labelledby="consultation-title">
-        <div class="consultation-offer">
-          <div class="consultation-copy">
-            <p class="eyebrow">Free infrastructure review</p>
-            <h2 id="consultation-title">Make your infrastructure cheaper and easier to run.</h2>
-            <p>In a focused 30-minute conversation, we can look for cloud cost waste, operational bottlenecks, and reliability improvements.</p>
-          </div>
-          <form class="consultation-form" id="consultation-form">
-            <p class="consultation-form-title">Open an email draft</p>
-            <button class="action action--primary" type="submit">Book a free review</button>
-          </form>
-        </div>
-      </section>
 
       <section class="ask-section ask-gate" id="ask" aria-labelledby="ask-title" hidden>
         <div class="section-inner ask-inner">
@@ -256,20 +243,6 @@ const nodes = [
         promptButtons[k].addEventListener('click', function() {
           askInput.value = this.getAttribute('data-question');
           askForm.requestSubmit();
-        });
-      }
-
-      var consultationForm = document.getElementById('consultation-form');
-      if (consultationForm) {
-        consultationForm.addEventListener('submit', function(event) {
-          event.preventDefault();
-          var subject = encodeURIComponent('Free infrastructure review');
-          var body = encodeURIComponent('Hi Amir,\n\nI\x27d like to request a free infrastructure review.\n\nA little context:\n- Company or project:\n- Current infrastructure or cloud provider:\n- Main challenge:\n- Approximate monthly infrastructure spend (optional):\n\nBest,\n');
-          gtag('event', 'consultation_email', {
-            event_category: 'Consultation',
-            event_label: 'free_infrastructure_review'
-          });
-          window.location.href = 'mailto:amir.rassafi@gmail.com?subject=' + subject + '&body=' + body;
         });
       }
     </script>
