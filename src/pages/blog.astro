@@ -79,6 +79,12 @@ import '../styles/global.css';
       }
 
       var trackedLinks = document.getElementsByClassName('social-media-items');
+      if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+        var contactLink = document.querySelector('[data-link-id="gmail"]');
+        contactLink.href = 'mailto:amir.rassafi@gmail.com';
+        contactLink.removeAttribute('target');
+        contactLink.removeAttribute('rel');
+      }
       for (var i = 0; i < trackedLinks.length; i++) {
         trackedLinks[i].addEventListener('click', function() {
           gtag('event', 'click', {
