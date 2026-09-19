@@ -31,73 +31,31 @@ import '../styles/global.css';
 
     <main class="consultation-page">
       <section class="consultation-hero" aria-labelledby="consultation-title">
-        <div class="consultation-hero-copy">
-          <p class="eyebrow">Free 30-minute infrastructure review</p>
-          <h1 id="consultation-title">Infrastructure should create momentum, not drag.</h1>
-          <p class="consultation-lede">A good platform does not force a choice between saving money, staying secure, and shipping quickly. It creates a practical balance—then keeps evolving with the product.</p>
-          <form class="consultation-actions" id="consultation-form">
-            <button class="action action--primary" type="submit">Request a free review</button>
-            <span>No pitch. Just a useful second opinion.</span>
-          </form>
-        </div>
-
-        <aside class="review-card" aria-label="What the review covers">
-          <p class="review-card-label">A healthy foundation</p>
-          <div class="review-scorecard">
-            <div><span>01</span><strong>Cost</strong><small>Spend with intent</small></div>
-            <div><span>02</span><strong>Security</strong><small>Reduce real risk</small></div>
-            <div><span>03</span><strong>Change</strong><small>Evolve without fear</small></div>
-            <div><span>04</span><strong>Speed</strong><small>Ship with confidence</small></div>
-          </div>
-          <p class="review-card-note">The goal is not “perfect infrastructure.” It is the right infrastructure for the business today—with a safe path forward.</p>
-        </aside>
+        <p class="eyebrow">Free 30-minute infrastructure review</p>
+        <h1 id="consultation-title">Make infrastructure simpler, safer, and less expensive.</h1>
+        <p class="consultation-lede">A practical second opinion focused on quick wins—not a costly redesign.</p>
+        <form class="consultation-actions" id="consultation-form">
+          <button class="action action--primary" type="submit">Request a free review</button>
+          <span>No pitch or obligation.</span>
+        </form>
       </section>
 
-      <section class="consultation-balance" aria-labelledby="balance-title">
-        <div class="consultation-heading">
-          <p class="eyebrow">The real target</p>
-          <h2 id="balance-title">Better outcomes, not more infrastructure.</h2>
-          <p>Architecture earns its keep when it helps the whole organisation. Every recommendation should improve at least one outcome without quietly undermining the others.</p>
-        </div>
-        <div class="outcome-grid">
-          <article><span>Cost</span><h3>Spend where it matters</h3><p>Remove waste, right-size resources, and make future costs easier to understand.</p></article>
-          <article><span>Security</span><h3>Protect the likely paths</h3><p>Strengthen access, secrets, backups, and recovery before adding complex controls.</p></article>
-          <article><span>Adaptability</span><h3>Keep change affordable</h3><p>Reduce brittle dependencies so the platform can grow with the product and team.</p></article>
-          <article><span>Delivery</span><h3>Shorten the path to value</h3><p>Make releases repeatable, observable, and safe enough to happen more often.</p></article>
-        </div>
+      <section class="consultation-summary" aria-label="Review priorities">
+        <article><strong>Lower cost</strong><span>Remove waste first.</span></article>
+        <article><strong>Reduce risk</strong><span>Fix practical security gaps.</span></article>
+        <article><strong>Ship faster</strong><span>Simplify delivery and operations.</span></article>
+        <article><strong>Evolve safely</strong><span>Keep future change affordable.</span></article>
       </section>
 
-      <section class="quick-wins" aria-labelledby="quick-wins-title">
-        <div class="quick-wins-intro">
-          <p class="eyebrow">Start with the obvious wins</p>
-          <h2 id="quick-wins-title">There is usually valuable work hiding in plain sight.</h2>
-          <p>Many improvements do not need a migration, a new platform, or months of effort. A review should surface the low-hanging fruit first: small, safe changes that pay back quickly and create room for the work that follows.</p>
-        </div>
-        <ul class="quick-wins-list">
-          <li><span>01</span><div><strong>Unused and oversized resources</strong><p>Stop paying for capacity the product does not use.</p></div></li>
-          <li><span>02</span><div><strong>Manual release steps</strong><p>Automate the repeated parts that slow delivery and invite mistakes.</p></div></li>
-          <li><span>03</span><div><strong>Weak visibility</strong><p>Add the few signals that make failures faster to find and fix.</p></div></li>
-          <li><span>04</span><div><strong>Access and backup gaps</strong><p>Close common risks with clear ownership and tested recovery.</p></div></li>
-        </ul>
-      </section>
-
-      <section class="ai-operations" aria-labelledby="ai-operations-title">
+      <section class="consultation-details" aria-labelledby="quick-wins-title">
         <div>
-          <p class="eyebrow">AI with guardrails</p>
-          <h2 id="ai-operations-title">Keep the system under control without creating more work.</h2>
+          <p class="eyebrow">Quick wins first</p>
+          <h2 id="quick-wins-title">Useful improvements do not need to be difficult.</h2>
         </div>
-        <div class="ai-operations-copy">
-          <p>Used carefully, AI can reduce the routine effort of running infrastructure: reviewing changes, improving documentation, investigating incidents, and keeping configuration consistent.</p>
-          <p>It should support engineering judgement—not bypass it. Clear boundaries, reviewable changes, and existing security controls keep the benefit high and the risk low.</p>
-        </div>
-      </section>
-
-      <section class="consultation-cta" aria-labelledby="consultation-cta-title">
         <div>
-          <p class="eyebrow">A practical first step</p>
-          <h2 id="consultation-cta-title">Find the first few improvements worth making.</h2>
+          <p>Unused resources, manual releases, weak monitoring, access gaps, and untested backups can often be improved with limited effort.</p>
+          <p class="ai-note"><strong>AI can help:</strong> with clear guardrails, it can reduce routine work while keeping changes reviewable and under control.</p>
         </div>
-        <button class="action action--primary" type="submit" form="consultation-form">Request a free review</button>
       </section>
     </main>
 
