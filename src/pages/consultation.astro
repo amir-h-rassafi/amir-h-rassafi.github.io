@@ -7,9 +7,9 @@ import '../styles/global.css';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="A free infrastructure review to find practical improvements across cost, security, reliability, and delivery speed." />
+    <meta name="description" content="A free, independent GCP cost and architecture review for GCC teams." />
     <meta property="og:title" content="Free Infrastructure Review | Amir Hossein Rassafi" />
-    <meta property="og:description" content="Find low-effort infrastructure improvements that reduce cost and risk while helping teams ship faster." />
+    <meta property="og:description" content="A founder-led GCP review focused on immediate savings, resilient architecture, and ongoing control." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://amir-h-rassafi.github.io/consultation/" />
     <link rel="canonical" href="https://amir-h-rassafi.github.io/consultation/" />
@@ -31,9 +31,9 @@ import '../styles/global.css';
 
     <main class="consultation-page">
       <section class="consultation-hero" aria-labelledby="consultation-title">
-        <p class="eyebrow">Free 30-minute infrastructure review</p>
-        <h1 id="consultation-title">Make infrastructure simpler, safer, and less expensive.</h1>
-        <p class="consultation-lede">A practical second opinion focused on quick wins—not a costly redesign.</p>
+        <p class="eyebrow">Free 30-minute GCP infrastructure review</p>
+        <h1 id="consultation-title">An independent second opinion on your GCP infrastructure.</h1>
+        <p class="consultation-lede">Practical cost and architecture advice for GCC teams—without a cloud resale quota or managed-services contract.</p>
         <form class="consultation-actions" id="consultation-form">
           <button class="action action--primary" type="submit">Request a free review</button>
           <span>No pitch or obligation.</span>
@@ -41,20 +41,20 @@ import '../styles/global.css';
       </section>
 
       <section class="consultation-summary" aria-label="Review priorities">
-        <article><strong>Lower cost</strong><span>Remove waste first.</span></article>
-        <article><strong>Reduce risk</strong><span>Fix practical security gaps.</span></article>
+        <article><strong>Lower GCP cost</strong><span>Find immediate savings.</span></article>
+        <article><strong>Reduce risk</strong><span>Review regions, sovereignty, and resilience.</span></article>
         <article><strong>Ship faster</strong><span>Simplify delivery and operations.</span></article>
-        <article><strong>Evolve safely</strong><span>Keep future change affordable.</span></article>
+        <article><strong>Stay in control</strong><span>Improve governance and forecasting.</span></article>
       </section>
 
       <section class="consultation-details" aria-labelledby="quick-wins-title">
         <div>
-          <p class="eyebrow">Quick wins first</p>
-          <h2 id="quick-wins-title">Useful improvements do not need to be difficult.</h2>
+          <p class="eyebrow">Fixed-scope and founder-led</p>
+          <h2 id="quick-wins-title">Start with the GCP improvements worth making now.</h2>
         </div>
         <div>
-          <p>Unused resources, manual releases, weak monitoring, access gaps, and untested backups can often be improved with limited effort.</p>
-          <p class="ai-note"><strong>AI can help:</strong> with clear guardrails, it can reduce routine work while keeping changes reviewable and under control.</p>
+          <p>Cost, architecture, region choice, latency, billing, security, and resilience are reviewed together—with quick wins prioritised first.</p>
+          <p class="ai-note"><strong>Independent by design:</strong> recommendations follow your priorities, not a sales target. AI-assisted checks can reduce routine effort while senior review keeps decisions under control.</p>
         </div>
       </section>
     </main>
@@ -87,9 +87,9 @@ import '../styles/global.css';
     <script is:inline>
       document.getElementById('consultation-form').addEventListener('submit', function(event) {
         event.preventDefault();
-        var subject = encodeURIComponent('Free infrastructure review');
-        var body = encodeURIComponent('Hi Amir,\n\nI\x27d like to request a free infrastructure review.\n\nA little context:\n- Company or project:\n- Current infrastructure or cloud provider:\n- Main challenge:\n- Approximate monthly infrastructure spend (optional):\n\nBest,\n');
-        gtag('event', 'consultation_email', { event_category: 'Consultation', event_label: 'free_infrastructure_review' });
+        var subject = encodeURIComponent('Free GCP infrastructure review');
+        var body = encodeURIComponent('Hi Amir,\n\nI\x27d like to request a free GCP infrastructure review.\n\nA little context:\n- Company or project:\n- GCP regions or main workloads:\n- Main challenge:\n- Approximate monthly GCP spend (optional):\n\nBest,\n');
+        gtag('event', 'consultation_email', { event_category: 'Consultation', event_label: 'free_gcp_infrastructure_review' });
         if (useMailApp) {
           window.location.href = 'mailto:amir.rassafi@gmail.com?subject=' + subject + '&body=' + body;
           return;
